@@ -8,7 +8,7 @@ using System.Reflection;
 using Notes.Application;
 using Notes.Application.Common.Mappings;
 using Notes.Application.Interfaces;
-using Notes.Persistence;
+using Persistence;
 
 namespace Notes.WebApi
 {

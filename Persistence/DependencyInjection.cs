@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Notes.Application.Interfaces;
 using Persistence;
 
-namespace Notes.Persistence
+namespace Persistence
 {
     public static class DependencyInjection
     {
