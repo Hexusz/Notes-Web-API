@@ -15,21 +15,22 @@ namespace Notes.Application.Notes.Commands.CreateNote
     {
         private readonly INotesDbContext _dbContext;
 
-        public CreateNoteCommandHandler(INotesDbContext dbContext) => 
+        public CreateNoteCommandHandler(INotesDbContext dbContext) =>
             _dbContext = dbContext;
 
         public async Task<Guid> Handle(CreateNoteCommand request,
             CancellationToken cancellationToken)
         {
-            var note = new Note()
+            var note = new Note
             {
                 UserId = request.UserId,
                 Title = request.Title,
-                Details = request.Title,
+                Details = request.Details,
                 Id = Guid.NewGuid(),
                 CreationDate = DateTime.Now,
                 EditDate = null
             };
+
             await _dbContext.Notes.AddAsync(note, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
